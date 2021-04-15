@@ -155,11 +155,21 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/advancedsearch/currentTab</li>
+
+<li>$:/state/basic-form</li>
+
+<li>$:/state/tab--1498284803</li>
+
 <li>$:/state/tab--1963855381</li>
 
 <li>$:/state/tab--2112689675</li>
 
+<li>$:/state/tab--959111941</li>
+
 <li>$:/state/tab-1749438307</li>
+
+<li>$:/state/tab/sidebar--595412856</li>
 
 <li>$:/state/tabs/controlpanel/toolbars-1345989671</li>
 
@@ -174,6 +184,10 @@ Error message and password prompt
 <li>$:/themes/tiddlywiki/vanilla</li>
 
 <li>$:/themes/tiddlywiki/vanilla/options/sidebarlayout</li>
+
+<li>Basic Form</li>
+
+<li>entry</li>
 
 </ul>
 </p>
@@ -10071,14 +10085,33 @@ Error message and password prompt
 <div created="20210412060131629" modified="20210412060132838" title="$:/SiteTitle">
 <pre>Basic Forms</pre>
 </div>
-<div created="20210412060223660" modified="20210412060259372" title="$:/state/tab--1963855381">
-<pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
+<div created="20210412063118392" creator="Reaktorblue" modified="20210412063118392" modifier="Reaktorblue" title="$:/state/advancedsearch/currentTab">
+<pre>$:/core/ui/AdvancedSearch/Shadows</pre>
 </div>
-<div created="20210412060218201" modified="20210412060220022" title="$:/state/tab--2112689675">
+<div birth-date="2021-04-12" card-acquired="Yes" created="20210412061115879" creator="Reaktorblue" first-name="John" jersey-number="3" last-name="Doe" modified="20210412142648754" modifier="Reaktorblue" tags="[[Basic Forms]]" title="$:/state/basic-form">
+<pre>| First Name | {{!!first-name}} |
+| Last Name | {{!!last-name}} |
+| Birth Date | {{!!birth-date}} |
+| Jersey Number | {{!!jersey-number}} |
+| Card Acquired | {{!!card-acquired}} |</pre>
+</div>
+<div created="20210412063118392" creator="Reaktorblue" modified="20210412063118392" modifier="Reaktorblue" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/Shadows</pre>
+</div>
+<div created="20210412060223660" creator="Reaktorblue" modified="20210412063026620" modifier="Reaktorblue" title="$:/state/tab--1963855381">
+<pre>$:/core/ui/ControlPanel/Toolbars</pre>
+</div>
+<div created="20210412060218201" creator="Reaktorblue" modified="20210412063550450" modifier="Reaktorblue" title="$:/state/tab--2112689675">
 <pre>$:/core/ui/ControlPanel/Basics</pre>
 </div>
-<div created="20210412060215358" modified="20210412060456207" title="$:/state/tab-1749438307">
+<div created="20210412062422210" creator="Reaktorblue" modified="20210412062427131" modifier="Reaktorblue" title="$:/state/tab--959111941">
+<pre>$:/core/ui/ControlPanel/TiddlerFields</pre>
+</div>
+<div created="20210412060215358" creator="Reaktorblue" modified="20210412063549424" modifier="Reaktorblue" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Info</pre>
+</div>
+<div created="20210412135818808" creator="Reaktorblue" modified="20210412135818808" modifier="Reaktorblue" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20210412060242711" modified="20210412060242711" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
@@ -10089,7 +10122,7 @@ Error message and password prompt
 <div created="20210412060501477" creator="R" modified="20210412060506965" modifier="Reaktorblu" title="$:/status/UserName">
 <pre>Reaktorblue</pre>
 </div>
-<div created="20210412060159709" list="$:/ControlPanel" modified="20210412060437729" title="$:/StoryList">
+<div created="20210412060749114" creator="Reaktorblue" list="[[Basic Form]] $:/state/basic-form" modified="20210412142652881" modifier="Reaktorblue" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10203,6 +10236,33 @@ Error message and password prompt
 </div>
 <div created="20210412060301599" modified="20210412060301599" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
+</div>
+<div created="20210412061735863" creator="Reaktorblue" modified="20210412142625877" modifier="Reaktorblue" tags="[[Basic Forms]]" title="Basic Form">
+<pre>\define newEntry()
+&lt;$action-createtiddler $basetitle=&quot;entry&quot; $template=&quot;$:/state/basic-form&quot;/&gt;
+\end
+
+&lt;$button actions=&lt;&lt;newEntry&gt;&gt; &gt;
+Create Tiddler
+&lt;/$button&gt;
+
+When information is entered into this form, it's stored in [[$:/state/basic-form]]
+
+| First Name | &lt;$edit-text tiddler=&quot;$:/state/basic-form&quot; field=&quot;first-name&quot;/&gt; |
+| Last Name | &lt;$edit-text tiddler=&quot;$:/state/basic-form&quot; field=&quot;last-name&quot;/&gt; |
+| Birth Date | &lt;$edit-text tiddler=&quot;$:/state/basic-form&quot; field=&quot;birth-date&quot; type=&quot;date&quot; /&gt; |
+| Jersey Number | &lt;$edit-text tiddler=&quot;$:/state/basic-form&quot; field=&quot;jersey-number&quot;/&gt; |
+| Card Acquired | &lt;$checkbox tiddler=&quot;$:/state/basic-form&quot; field=&quot;card-acquired&quot; checked=&quot;Yes&quot;/&gt; |
+
+
+</pre>
+</div>
+<div birth-date="2021-04-12" card-acquired="Yes" created="20210412142651035" creator="Reaktorblue" first-name="John" jersey-number="3" last-name="Doe" modified="20210412142651035" modifier="Reaktorblue" tags="[[Basic Forms]]" title="entry">
+<pre>| First Name | {{!!first-name}} |
+| Last Name | {{!!last-name}} |
+| Birth Date | {{!!birth-date}} |
+| Jersey Number | {{!!jersey-number}} |
+| Card Acquired | {{!!card-acquired}} |</pre>
 </div>
 
 
